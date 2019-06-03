@@ -1,0 +1,44 @@
+{
+				"$schema": "http://json-schema.org/draft-06/schema#",
+				"id": "http://adaptivecards.io/schemas/adaptive-card.json",
+				"anyOf": [
+					{
+						"allOf": [
+							{
+								"$ref": "#/definitions/TextBlock"
+							}
+						]
+					}
+				],
+				"definitions": {
+					"TextBlock": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"type": {
+								"enum": [ "TextBlock" ],
+								"description": "Must be `TextBlock`"
+							},
+							"size": {
+								"$ref": "#/definitions/FontSize"
+							}
+						}
+					},
+					"FontSize": {
+						"oneOf": [
+							{
+								"enum": [
+									"default",
+									"large"
+								]
+							},
+							{
+								"enum": [
+									"small"
+								],
+								"description": "Small font size"
+							}
+						]
+					}
+				}
+			}
